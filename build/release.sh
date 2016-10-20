@@ -14,10 +14,13 @@ then
   # build
   VERSION=$VERSION npm run build
 
+  echo "commit"
   # commit
   git add -A
   git commit -m "[build] $VERSION"
   npm version $VERSION --message "[release] $VERSION"
+
+  echo "publish"
 
   # publish
   git push origin refs/tags/v$VERSION
