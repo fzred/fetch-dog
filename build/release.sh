@@ -18,8 +18,9 @@ then
   # commit
   git add -A
   git commit -m "[build] $VERSION"
+  echo "commit1"
   npm version $VERSION --message "[release] $VERSION"
-
+echo "commit2"
   echo "publish"
 
   # publish
