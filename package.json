@@ -2,7 +2,7 @@
   "name": "fetch-dog",
   "version": "0.1.1",
   "description": "http 请求库",
-  "main": "./src/index.js",
+  "main": "./dist/fetch-dog.js",
   "scripts": {
     "build": "rollup -c build/rollup.config.js",
     "release": "bash build/release.sh"

@@ -1,5 +1,5 @@
 /**
- * fetch-dog v0.1.1
+ * fetch-dog v0.1.2
  * (c) 2016 方增鸿
  * @license MIT
  */
