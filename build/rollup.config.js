@@ -12,8 +12,13 @@ export default {
   dest: 'dist/fetch-dog.js',
   format: 'umd',
   moduleName: 'FetchDog',
-  plugins: [includePaths(includePathOptions)],
-//  plugins: [buble()],
+  plugins: [includePaths(includePathOptions), buble({
+//    transforms: {
+//      arrow: true,
+//      modules: false,
+//      dangerousForOf: true
+//    }
+  })],
   banner: `/**
  * fetch-dog v${version}
  * (c) ${new Date().getFullYear()} 方增鸿

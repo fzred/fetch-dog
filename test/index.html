@@ -5,8 +5,10 @@
     <title>Document</title>
     <script src="../dist/fetch-dog.js"></script>
     <script>
-        var fdog = new FetchDog(fetch, Headers)
-        console.log(fdog)
+        var fdog = new FetchDog({ fetch: fetch, Headers: Headers })
+        fdog.get('./data/list.json', { a: 2 }).then(function (data) {
+            console.log(data)
+        })
     </script>
 </head>
 <body>

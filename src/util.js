@@ -36,8 +36,10 @@ export function each(obj, iterator) {
       iterator.call(obj[i], obj[i], i)
     }
   } else if (isObject(obj)) {
-    for (const key of Object.getOwnPropertyNames(obj)) {
-      iterator.call(obj[key], obj[key], key)
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        iterator.call(obj[key], obj[key], key)
+      }
     }
   }
 

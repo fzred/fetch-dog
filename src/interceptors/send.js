@@ -9,5 +9,6 @@ export default function (requestConfig) {
   delete request.data
   delete request.options
   delete request.url
-  return this.fetch(url, request)
+  const fetch = this.fetch // 先保留变量，防止this指向问题
+  return fetch(url, request)
 }
