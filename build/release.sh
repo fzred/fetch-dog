@@ -1,5 +1,5 @@
 set -e
-echo "Enter release version: "
+echo "输入版本号: "
 read VERSION
 
 read -p "正在发布 $VERSION - 确定吗? (y/n)" -n 1 -r
