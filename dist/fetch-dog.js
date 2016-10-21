@@ -73,6 +73,20 @@ function _merge(target, source, deep) {
   });
 }
 
+// eslint-disable-next-line no-underscore-dangle
+function _assign(target) {
+  var sources = [], len = arguments.length - 1;
+  while ( len-- > 0 ) sources[ len ] = arguments[ len + 1 ];
+
+  sources.forEach(function (source) {
+    _merge(target, source);
+  });
+
+  return target
+}
+
+var assign = Object.assign || _assign;
+
 function merge(target) {
   var sources = [], len = arguments.length - 1;
   while ( len-- > 0 ) sources[ len ] = arguments[ len + 1 ];
@@ -131,7 +145,7 @@ function queryParams(obj) {
 }
 
 var method = function (requestConfig) {
-  var request = Object.assign({}, requestConfig);
+  var request = assign({}, requestConfig);
   var options = request.options;
   if (options.emulateHTTP && /^(PUT|PATCH|DELETE)$/i.test(request.method)) {
     request.headers.set('X-HTTP-Method-Override', request.method);
@@ -159,7 +173,7 @@ var method = function (requestConfig) {
 };
 
 var send = function (requestConfig) {
-  var request = Object.assign({}, requestConfig);
+  var request = assign({}, requestConfig);
   var url = request.url;
   var options = request.options;
   if (options.client) {
@@ -208,7 +222,7 @@ var after = function (res) {
  可用于浏览器，Node，RN
  */
 var Rend = function Rend(extraArgument) {
-  Object.assign(this, extraArgument);
+  assign(this, extraArgument);
   // this.fetch = fetch
   // this.Headers = Headers
   this.interceptors = {

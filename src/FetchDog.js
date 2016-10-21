@@ -6,11 +6,11 @@ import method from './interceptors/method'
 import send from './interceptors/send'
 import before from './interceptors/before'
 import after from './interceptors/after'
-import { when } from './util'
+import { when, assign } from './util'
 
 export default class Rend {
   constructor(extraArgument) {
-    Object.assign(this, extraArgument)
+    assign(this, extraArgument)
     // this.fetch = fetch
     // this.Headers = Headers
     this.interceptors = {

@@ -66,6 +66,17 @@ function _merge(target, source, deep) {
   })
 }
 
+// eslint-disable-next-line no-underscore-dangle
+function _assign(target, ...sources) {
+  sources.forEach((source) => {
+    _merge(target, source)
+  })
+
+  return target
+}
+
+export const assign = Object.assign || _assign
+
 export function merge(target, ...sources) {
   sources.forEach((source) => {
     _merge(target, source, true)

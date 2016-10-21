@@ -1,7 +1,8 @@
 import { queryParams } from '../url'
+import { assign } from '../util'
 
 export default function (requestConfig) {
-  const request = Object.assign({}, requestConfig)
+  const request = assign({}, requestConfig)
   const { options } = request
   if (options.emulateHTTP && /^(PUT|PATCH|DELETE)$/i.test(request.method)) {
     request.headers.set('X-HTTP-Method-Override', request.method)
