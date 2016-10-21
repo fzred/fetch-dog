@@ -12,6 +12,8 @@
 # 使用
 ## 添加polyfill
 fetch 目前原生支持率并不高，不过引入 polyfill 后即可支持。
+
+
 1. 浏览器端引入 [whatwg-fetch](https://github.com/github/fetch)
 2. NodeJS引入 [node-fetch](https://github.com/bitinn/node-fetch)
 3. react-native 对fetch有原生支持，不需要引入polyfill
