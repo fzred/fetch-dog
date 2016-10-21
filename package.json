@@ -1,6 +1,6 @@
 {
   "name": "fetch-dog",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "http 请求库",
   "main": "./dist/fetch-dog.js",
   "scripts": {
