@@ -8,7 +8,47 @@
 
 
 ## 使用
+### 添加polyfill
+fetch 目前原生支持率并不高，不过引入 polyfill 后即可支持。
+1. 浏览器端引入 [whatwg-fetch](https://github.com/github/fetch)
+2. NodeJS引入 [node-fetch](https://github.com/bitinn/node-fetch)
+3. react-native 对fetch有原生支持，不需要引入polyfill
+
+### 安装
+```bash
+npm install fetch-dog
+```
+#### 浏览器
+```javascript
+import 'whatwg-fetch'
+import FetchDog from 'fetch-dog'
+
+const fd = new FetchDog({ fetch, Headers })
+fd.get('/data/list', { id: 2 }).then(data => {
+  console.log(data)
+})
+```
+
+#### NodeJS
+
+```javascript
+import fetch, { Request, Headers, Response } from 'node-fetch'
+import FetchDog from 'fetch-dog'
+
+const fd = new FetchDog({ fetch, Headers })
+fd.get('http://example.com/data/list', { id: 2 }).then(data => {
+  console.log(data)
+})
+```
+
+#### react-native
+```javascript
+import FetchDog from 'fetch-dog'
+
+const fd = new FetchDog({ fetch, Headers })
+fd.get('http://example.com/data/list', { id: 2 }).then(data => {
+  console.log(data)
+})
+```
 
 
-
-## 为什么叫 fetch-dog
